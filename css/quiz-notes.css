@@ -1,0 +1,30 @@
+@import url("common.css");
+/* 共通スタイルをインポート */
+
+/* 構成音選択クイズの選択キーのスタイル */
+.white-key.selected {
+  background: #ffcc00;
+}
+
+.black-key.selected {
+  background: #ffcc00;
+  color: black;
+}
+
+#result {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 1rem 0;
+}
+
+#check,
+#next {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.nav {
+  margin-top: 1rem;
+}
