@@ -1,0 +1,229 @@
+body {
+  /* body の基本設定は common.css にあるが、index.html の <style> にあったものは上書き */
+  text-align: center;
+  /* テキストを中央揃え */
+  padding: 3rem;
+  /* body全体に3remの余白 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* 左上から右下への紫グラデーション */
+  min-height: 100vh;
+  /* 最小高さを画面全体に */
+  display: flex;
+  /* フレックスボックスレイアウト */
+  align-items: center;
+  /* 垂直方向で中央揃え */
+  justify-content: center;
+  /* 水平方向で中央揃え */
+}
+
+/* アプリ全体のコンテナ */
+.app-container {
+  background: rgba(255, 255, 255, 0.95);
+  /* 半透明の白背景 */
+  border-radius: 20px;
+  /* 角を20px丸める */
+  padding: 3rem 2rem;
+  /* 上下3rem、左右2remの余白 */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  /* 大きな影で浮いているように見せる */
+  max-width: 800px;
+  /* 最大幅を800pxに制限 */
+  width: 90%;
+  /* 幅を親要素の90%に */
+}
+
+h1 {
+  text-align: center;
+  /* テキストを中央揃え */
+  margin-bottom: 1rem;
+  /* 下部に1remのマージン */
+  font-size: 2.5rem;
+  /* フォントサイズを2.5remに */
+  color: #333;
+  /* テキスト色を濃いグレーに */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* テキストに影を追加 */
+}
+
+/* アプリの説明文 */
+.app-description {
+  color: #666;
+  /* テキスト色をグレーに */
+  margin-bottom: 2rem;
+  /* 下部に2remのマージン */
+  font-size: 1.1rem;
+  /* フォントサイズを1.1remに */
+}
+
+/* メニューコンテナ */
+.menu {
+  display: flex;
+  /* フレックスボックスレイアウト */
+  flex-direction: column;
+  /* 子要素を縦方向に並べる */
+  gap: 1.5rem;
+  /* 子要素間の間隔を1.5rem */
+  align-items: center;
+  /* 子要素を中央揃え */
+  margin-bottom: 2rem;
+  /* 下部に2remのマージン */
+}
+
+/* メニューリンクボタン - カードスタイルに変更 */
+.menu-card {
+  /* カード形式のデザイン */
+  display: flex;
+  /* フレックスボックスレイアウト */
+  flex-direction: column;
+  /* 子要素を縦方向に並べる */
+  align-items: center;
+  /* 子要素を中央揃え */
+  width: 100%;
+  /* 幅を100%に */
+  max-width: 500px;
+  /* 最大幅を500pxに制限 */
+  padding: 2rem;
+  /* 全方向に2remの余白 */
+  background: white;
+  /* 背景色を白に */
+  color: #333;
+  /* テキスト色を濃いグレーに */
+  text-decoration: none;
+  /* 下線を削除 */
+  border-radius: 15px;
+  /* 角を15px丸める */
+  /* 影でカード感を演出 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* 影を追加 */
+  transition: all 0.3s ease;
+  /* 全てのプロパティ変化を0.3秒でアニメーション */
+  border: 3px solid transparent;
+  /* 透明な枠線（ホバー時に色が変わる） */
+}
+
+/* 各モード別のアクセントカラー */
+.menu-card.learn {
+  border-color: #4CAF50;
+  /* 学習モードは緑の枠線 */
+}
+
+.menu-card.quiz-name {
+  border-color: #2196F3;
+  /* 名前当てクイズは青の枠線 */
+}
+
+.menu-card.quiz-notes {
+  border-color: #FF9800;
+  /* 構成音クイズはオレンジの枠線 */
+}
+
+/* メニューアイコン */
+.menu-icon {
+  font-size: 3rem;
+  /* フォントサイズを3remに（大きな絵文字） */
+  margin-bottom: 0.5rem;
+  /* 下部に0.5remのマージン */
+}
+
+/* メニュータイトル */
+.menu-title {
+  font-size: 1.3rem;
+  /* フォントサイズを1.3remに */
+  font-weight: bold;
+  /* フォントを太字に */
+  margin-bottom: 0.5rem;
+  /* 下部に0.5remのマージン */
+}
+
+/* メニュー説明文 */
+.menu-desc {
+  font-size: 0.9rem;
+  /* フォントサイズを0.9remに（小さめ） */
+  color: #666;
+  /* テキスト色をグレーに */
+}
+
+/* ホバーエフェクト - より動的に */
+.menu-card:hover {
+  /* ホバー時に浮き上がるアニメーション */
+  transform: translateY(-5px);
+  /* 上に5px移動 */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  /* より大きな影 */
+}
+
+.menu-card.learn:hover {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  /* 緑のグラデーション背景 */
+  color: white;
+  /* テキスト色を白に */
+}
+
+.menu-card.quiz-name:hover {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  /* 青のグラデーション背景 */
+  color: white;
+  /* テキスト色を白に */
+}
+
+.menu-card.quiz-notes:hover {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  /* オレンジのグラデーション背景 */
+  color: white;
+  /* テキスト色を白に */
+}
+
+/* ホバー時の説明文の色 */
+.menu-card:hover .menu-desc {
+  color: rgba(255, 255, 255, 0.9);
+  /* ホバー時は半透明の白に */
+}
+
+/* フッター */
+.app-footer {
+  margin-top: 2rem;
+  /* 上部に2remのマージン */
+  padding-top: 1rem;
+  /* 上部に1remの余白 */
+  border-top: 2px solid #eee;
+  /* 上部に2pxの薄いグレー枠線 */
+  color: #666;
+  /* テキスト色をグレーに */
+  font-size: 0.9rem;
+  /* フォントサイズを0.9remに */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+  /* 画面幅が768px以下の場合 */
+  body {
+    padding: 1.25rem;
+    /* 余白を1.25remに縮小 */
+  }
+
+  h1 {
+    font-size: 2rem;
+    /* タイトルのフォントサイズを2remに縮小 */
+  }
+
+  .app-container {
+    padding: 2rem 1.5rem;
+    /* コンテナの余白を縮小 */
+  }
+
+  .menu-card {
+    padding: 1.5rem;
+    /* カードの余白を縮小 */
+  }
+
+  .menu-icon {
+    font-size: 2.5rem;
+    /* アイコンサイズを縮小 */
+  }
+
+  .menu-title {
+    font-size: 1.1rem;
+    /* タイトルサイズを縮小 */
+  }
+}

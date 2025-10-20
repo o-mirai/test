@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>コード名当てクイズ</title>
+  <!-- 【変更】CSS @import の代わりに、HTMLで直接複数のlinkタグを使用 -->
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/quiz-name.css" />
+  <script type="module" src="js/quiz-name.js"></script>
+</head>
+
+<body>
+  <main class="main">
+    <h1>コード名当てクイズ</h1>
+
+    <div class="score-container">
+      <div class="score-card">
+        <div class="score-label">正解数</div>
+        <div class="score-value" id="correct-count">0</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">連続正解</div>
+        <div class="score-value streak" id="streak-count">0</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">正答率</div>
+        <div class="score-value accuracy" id="accuracy">0%</div>
+      </div>
+    </div>
+
+    <div id="keyboard"></div>
+    <div class="choices">
+      <button class="choice">C</button>
+      <button class="choice">Dm</button>
+      <button class="choice">Em</button>
+      <button class="choice">F</button>
+      <button class="choice">G</button>
+      <button class="choice">Am</button>
+      <button class="choice">C7</button>
+    </div>
+    <p id="result">コードを選んでください</p>
+    <div class="nav">
+      <button id="next">次の問題へ</button>
+      <button id="replay">🔊 もう一度聴く</button>
+      <button id="reset-score">📊 スコアリセット</button>
+    </div>
+    <div class="nav">
+      <a href="index.html">← ホームに戻る</a>
+      <a href="learn.html">← 学習モードへ</a>
+      <a href="quiz-notes.html">構成音選択クイズへ →</a>
+    </div>
+  </main>
+</body>
+
+</html>

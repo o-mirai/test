@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>コード学習モード</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/learn.css" />
+  <script type="module" src="js/learn.js"></script>
+</head>
+
+<body>
+  <main class="main">
+    <h1>コード学習モード</h1>
+    <p class="mode-description">各コードボタンをクリックして、構成音と音を確認しましょう</p>
+
+    <div class="chord-buttons">
+      <button data-chord="C">C</button>
+      <button data-chord="Dm">Dm</button>
+      <button data-chord="Em">Em</button>
+      <button data-chord="F">F</button>
+      <button data-chord="G">G</button>
+      <button data-chord="Am">Am</button>
+      <button data-chord="C7">C7</button>
+    </div>
+
+    <!-- コード情報表示エリアをコンテナで囲む -->
+    <div class="chord-info-container">
+      <p id="chord-name">コード：-</p>
+      <p id="chord-notes">構成音：-</p>
+    </div>
+
+    <div id="keyboard"></div>
+
+    <!-- 補足説明エリア -->
+    <div class="learning-tips">
+      <h3>💡 学習のヒント</h3>
+      <ul>
+        <li>黄色くハイライトされた鍵盤が、そのコードの構成音です</li>
+        <li>コードボタンをクリックすると、音が自動的に鳴ります</li>
+        <li>何度もクリックして、耳で覚えましょう！</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="index.html">← ホームに戻る</a>
+      <a href="quiz-name.html">コード名当てクイズへ →</a>
+      <a href="quiz-notes.html">構成音選択クイズへ →</a>
+    </div>
+  </main>
+</body>
+
+</html>

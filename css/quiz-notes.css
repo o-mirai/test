@@ -1,0 +1,273 @@
+.choices {
+  display: flex;
+  /* フレックスボックスレイアウト */
+  flex-wrap: wrap;
+  /* 幅が足りない場合は折り返す */
+  justify-content: center;
+  /* 子要素を中央揃え */
+  gap: 0.5rem;
+  /* 子要素間の間隔を0.5rem */
+  margin-bottom: 1rem;
+  /* 下部に1remのマージン */
+}
+
+.choice {
+  padding: 0.5rem 1rem;
+  /* 上下0.5rem、左右1remの余白 */
+  font-size: 16px;
+  /* フォントサイズを16pxに */
+  cursor: pointer;
+  /* マウスカーソルを指に */
+  background: white;
+  /* 背景色を白に */
+  border: 2px solid #007acc;
+  /* 2pxの青枠線 */
+  border-radius: 8px;
+  /* 角を8px丸める */
+  color: #007acc;
+  /* テキスト色を青に */
+  transition: all 0.2s ease;
+  /* 全てのプロパティ変化を0.2秒でアニメーション */
+  font-weight: bold;
+  /* フォントを太字に */
+}
+
+/* 選択肢ボタンのホバーエフェクト */
+.choice:hover {
+  background: #007acc;
+  /* 背景色を青に */
+  color: white;
+  /* テキスト色を白に */
+  transform: translateY(-2px);
+  /* 上に2px移動 */
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+  /* 青の影を追加 */
+}
+
+/* 選択肢ボタンのアクティブ時 */
+.choice:active {
+  transform: translateY(0);
+  /* 元の位置に戻す */
+}
+
+/* アクセシビリティ: 選択肢ボタンのフォーカス状態 */
+.choice:focus {
+  outline: 3px solid #007acc;
+  outline-offset: 2px;
+}
+
+/* 正解のボタンスタイル */
+.choice.correct {
+  background: #4CAF50;
+  /* 背景色を緑に */
+  border-color: #4CAF50;
+  /* 枠線の色を緑に */
+  color: white;
+  /* テキスト色を白に */
+  animation: correctPulse 0.5s ease;
+  /* correctPulseアニメーションを0.5秒実行 */
+}
+
+/* 不正解のボタンスタイル */
+.choice.incorrect {
+  background: #f44336;
+  /* 背景色を赤に */
+  border-color: #f44336;
+  /* 枠線の色を赤に */
+  color: white;
+  /* テキスト色を白に */
+  animation: shake 0.5s ease;
+  /* shakeアニメーションを0.5秒実行 */
+}
+
+#result {
+  font-weight: bold;
+  /* フォントを太字に */
+  font-size: 18px;
+  /* フォントサイズを18pxに */
+  margin: 1rem 0;
+  /* 上下1remのマージン */
+  padding: 1rem;
+  /* 全方向に1remの余白 */
+  border-radius: 8px;
+  /* 角を8px丸める */
+  min-height: 60px;
+  /* 最小高さを60pxに */
+  display: flex;
+  /* フレックスボックスレイアウト */
+  align-items: center;
+  /* 垂直方向で中央揃え */
+  justify-content: center;
+  /* 水平方向で中央揃え */
+}
+
+/* 正解時の結果表示スタイル */
+#result.correct {
+  background: #e8f5e9;
+  /* 背景色を薄い緑に */
+  color: #2e7d32;
+  /* テキスト色を濃い緑に */
+  border: 2px solid #4CAF50;
+  /* 2pxの緑枠線 */
+}
+
+/* 不正解時の結果表示スタイル */
+#result.incorrect {
+  background: #ffebee;
+  /* 背景色を薄い赤に */
+  color: #c62828;
+  /* テキスト色を濃い赤に */
+  border: 2px solid #f44336;
+  /* 2pxの赤枠線 */
+}
+
+.nav {
+  margin-top: 1rem;
+  /* 上部に1remのマージン */
+}
+
+/* ナビゲーションボタンのスタイル */
+.nav button {
+  padding: 0.8rem 1.5rem;
+  /* 上下0.8rem、左右1.5remの余白 */
+  font-size: 16px;
+  /* フォントサイズを16pxに */
+  cursor: pointer;
+  /* マウスカーソルを指に */
+  background: #007acc;
+  /* 背景色を青に */
+  color: white;
+  /* テキスト色を白に */
+  border: none;
+  /* 枠線なし */
+  border-radius: 8px;
+  /* 角を8px丸める */
+  transition: all 0.2s ease;
+  /* 全てのプロパティ変化を0.2秒でアニメーション */
+  font-weight: bold;
+  /* フォントを太字に */
+  margin: 0.5rem;
+  /* 全方向に0.5remのマージン */
+}
+
+.nav button:hover {
+  background: #005fa3;
+  /* ホバー時の背景色を濃い青に */
+  transform: translateY(-2px);
+  /* 上に2px移動 */
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+  /* 青の影を追加 */
+}
+
+.nav button:active {
+  transform: translateY(0);
+  /* クリック時は元の位置に */
+}
+
+/* アクセシビリティ: ナビボタンのフォーカス状態 */
+.nav button:focus {
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* もう一度聴くボタンのスタイル */
+#replay {
+  background: #FF9800;
+  /* 背景色をオレンジに */
+}
+
+#replay:hover {
+  background: #F57C00;
+  /* ホバー時の背景色を濃いオレンジに */
+}
+
+/* スコアリセットボタンのスタイル */
+#reset-score {
+  background: #9C27B0;
+  /* 背景色を紫に */
+}
+
+#reset-score:hover {
+  background: #7B1FA2;
+  /* ホバー時の背景色を濃い紫に */
+}
+
+/* ホームに戻るリンクのスタイル */
+.nav a {
+  display: inline-block;
+  /* インラインブロック要素として表示 */
+  padding: 0.8rem 1.5rem;
+  /* 上下0.8rem、左右1.5remの余白 */
+  color: #666;
+  /* テキスト色をグレーに */
+  text-decoration: none;
+  /* 下線を削除 */
+  border-radius: 8px;
+  /* 角を8px丸める */
+  transition: all 0.2s ease;
+  /* 全てのプロパティ変化を0.2秒でアニメーション */
+}
+
+.nav a:hover {
+  background: #f0f0f0;
+  /* ホバー時の背景色を薄いグレーに */
+  color: #333;
+  /* テキスト色を濃いグレーに */
+}
+
+/* アクセシビリティ: ナビリンクのフォーカス状態 */
+.nav a:focus {
+  outline: 3px solid #007acc;
+  outline-offset: 2px;
+  background: #f0f0f0;
+}
+
+/* クイズモードのアクティブキーのスタイル */
+.white-key.active {
+  background: #ffcc00;
+  /* 背景色を黄色に */
+  animation: keyPulse 0.3s ease;
+  /* keyPulseアニメーションを0.3秒実行 */
+}
+
+.black-key.active {
+  background: #ffcc00;
+  /* 背景色を黄色に */
+  color: black;
+  /* テキスト色を黒に */
+  animation: keyPulseBlack 0.3s ease;
+  /* keyPulseアニメーションを0.3秒実行 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+  /* 画面幅が768px以下の場合 */
+  .choices {
+    gap: 0.3rem;
+    /* ボタン間の間隔を縮小 */
+  }
+
+  .choice {
+    padding: 0.4rem 0.8rem;
+    /* ボタンの余白を縮小 */
+    font-size: 14px;
+    /* フォントサイズを14pxに縮小 */
+  }
+
+  #result {
+    font-size: 16px;
+    /* フォントサイズを16pxに縮小 */
+    padding: 0.8rem;
+    /* 余白を縮小 */
+  }
+
+  .nav button {
+    padding: 0.6rem 1rem;
+    /* ボタンの余白を縮小 */
+    font-size: 14px;
+    /* フォントサイズを14pxに縮小 */
+    margin: 0.3rem;
+    /* マージンを縮小 */
+  }
+}

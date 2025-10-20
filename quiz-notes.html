@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>構成音選択クイズ</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/quiz-notes.css" />
+  <script type="module" src="js/quiz-notes.js"></script>
+  <style>
+    /* MIDI案内ボックスのスタイル */
+    .midi-info {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border-left: 4px solid #2196F3;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin: 1rem auto 1.5rem;
+      max-width: 600px;
+      box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+      animation: slideIn 0.5s ease-out;
+    }
+
+    .midi-info p {
+      margin: 0.3rem 0;
+      color: #1565c0;
+      text-align: center;
+    }
+
+    .midi-info strong {
+      color: #0d47a1;
+    }
+
+    .midi-info-sub {
+      font-size: 0.9rem;
+      color: #1976d2;
+      opacity: 0.9;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .midi-info {
+        padding: 0.8rem 1rem;
+        margin: 0.8rem auto 1.2rem;
+      }
+
+      .midi-info p {
+        font-size: 0.9rem;
+      }
+
+      .midi-info-sub {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="main">
+    <h1>構成音選択クイズ</h1>
+
+    <!-- MIDI対応の案内ボックス -->
+    <div class="midi-info">
+      <p>🎹 <strong>このモードではMIDIキーボードで直接入力できます！</strong></p>
+      <p class="midi-info-sub">MIDIキーボードを接続すると、鍵盤を弾いて回答できます</p>
+    </div>
+
+    <!-- MIDI接続状態表示（JavaScriptで動的に作成される） -->
+    <!-- <div id="midi-status" class="midi-status"></div> -->
+
+    <!-- スコア表示エリア -->
+    <div class="score-container">
+      <div class="score-card">
+        <div class="score-label">正解数</div>
+        <div class="score-value" id="correct-count">0</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">連続正解</div>
+        <div class="score-value streak" id="streak-count">0</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">正答率</div>
+        <div class="score-value accuracy" id="accuracy">0%</div>
+      </div>
+    </div>
+
+    <p>次のコードの構成音を選んでください：<strong id="chord-name"></strong></p>
+    <!-- 選択数の表示 -->
+    <p id="selection-info" class="selection-info">選択中: <span id="selected-count">0</span>音</p>
+    <div id="keyboard"></div>
+    <p id="result"></p>
+    <button id="check">回答をチェック</button>
+    <button id="next">次の問題へ</button>
+    <button id="reset">🔄 選択をリセット</button>
+    <button id="reset-score">📊 スコアリセット</button>
+    <div class="nav">
+      <a href="index.html">← ホームに戻る</a>
+      <a href="learn.html">← 学習モードへ</a>
+      <a href="quiz-name.html">← コード名当てクイズへ</a>
+    </div>
+  </main>
+</body>
+
+</html>
