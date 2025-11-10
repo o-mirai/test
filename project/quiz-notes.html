@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>構成音選択クイズ</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/quiz-notes.css" />
+  <script type="module" src="js/quiz-notes.js"></script>
+</head>
+
+<body>
+  <!-- サイドバー: コード選択エリア -->
+  <aside class="sidebar">
+    <h3>出題するコードを選択</h3>
+    
+    <!-- 選択コード数の表示 -->
+    <div class="selection-count">
+      選択中: <strong id="selected-chord-count">0</strong>個のコード
+    </div>
+    
+    <!-- ルート音選択 -->
+    <div class="selector-section">
+      <div class="section-header">
+        <h4>ルート音</h4>
+        <div class="select-buttons">
+          <button class="mini-button" id="select-all-roots">全選択</button>
+          <button class="mini-button" id="deselect-all-roots">全解除</button>
+        </div>
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="root-checkbox" value="C"> C</label>
+        <label><input type="checkbox" class="root-checkbox" value="C#/Db"> C#/D♭</label>
+        <label><input type="checkbox" class="root-checkbox" value="D"> D</label>
+        <label><input type="checkbox" class="root-checkbox" value="D#/Eb"> D#/E♭</label>
+        <label><input type="checkbox" class="root-checkbox" value="E"> E</label>
+        <label><input type="checkbox" class="root-checkbox" value="F"> F</label>
+        <label><input type="checkbox" class="root-checkbox" value="F#/Gb"> F#/G♭</label>
+        <label><input type="checkbox" class="root-checkbox" value="G"> G</label>
+        <label><input type="checkbox" class="root-checkbox" value="G#/Ab"> G#/A♭</label>
+        <label><input type="checkbox" class="root-checkbox" value="A"> A</label>
+        <label><input type="checkbox" class="root-checkbox" value="A#/Bb"> A#/B♭</label>
+        <label><input type="checkbox" class="root-checkbox" value="B"> B</label>
+      </div>
+    </div>
+
+    <!-- コードタイプ選択 -->
+    <div class="selector-section">
+      <div class="section-header">
+        <h4>コードの種類</h4>
+        <div class="select-buttons">
+          <button class="mini-button" id="select-all-types">全選択</button>
+          <button class="mini-button" id="deselect-all-types">全解除</button>
+        </div>
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="type-checkbox" value="major"> メジャー</label>
+        <label><input type="checkbox" class="type-checkbox" value="minor"> マイナー</label>
+        <label><input type="checkbox" class="type-checkbox" value="seventh"> セブンス</label>
+        <label><input type="checkbox" class="type-checkbox" value="major7"> メジャーセブンス</label>
+        <label><input type="checkbox" class="type-checkbox" value="minor7"> マイナーセブンス</label>
+        <label><input type="checkbox" class="type-checkbox" value="sus4"> サスフォー</label>
+        <label><input type="checkbox" class="type-checkbox" value="dim"> ディミニッシュ</label>
+        <label><input type="checkbox" class="type-checkbox" value="aug"> オーギュメント</label>
+      </div>
+    </div>
+
+    <button id="start-quiz" class="apply-button">クイズを開始 (20題)</button>
+  </aside>
+
+  <!-- メインコンテンツ -->
+  <main class="main">
+    <h1>構成音選択クイズ</h1>
+
+    <!-- MIDI対応の案内ボックス -->
+    <div class="midi-info">
+      <p>🎹 <strong>電子ピアノやキーボードで直接入力できます！</strong></p>
+      <p class="midi-info-sub">
+        電子ピアノやキーボードをUSBでつなぐと、実際に鍵盤を弾いて答えられます
+      </p>
+    </div>
+
+    <!-- 進捗バーと経過時間 -->
+    <div class="progress-bar-container">
+      <div class="progress-header">
+        <div class="progress-text" id="progress-text">問題 0 / 20</div>
+        <div class="timer-display">⏱️ <span id="timer">0:00</span></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <!-- 音量調整エリア -->
+    <div class="volume-control">
+      <label for="volume-slider">🔊 音量:</label>
+      <input type="range" id="volume-slider" min="0" max="100" value="50" step="1">
+      <span class="volume-display" id="volume-display">50%</span>
+    </div>
+
+    <p>次のコードの構成音を選んでください：<strong id="chord-name">-</strong></p>
+    <p id="selection-info" class="selection-info">選択中: <span id="selected-count">0</span>音</p>
+    
+    <div id="keyboard"></div>
+    <p id="result">「クイズを開始」ボタンを押してください</p>
+    
+    <div class="nav">
+      <button id="next" disabled>次の問題へ</button>
+      <button id="reset" disabled>🔄 選択をリセット</button>
+    </div>
+    
+    <div class="nav">
+      <a href="index.html">← ホームに戻る</a>
+      <a href="learn.html">← 学習モードへ</a>
+      <a href="quiz-name.html">← コード名当てクイズへ</a>
+    </div>
+  </main>
+</body>
+
+</html>
